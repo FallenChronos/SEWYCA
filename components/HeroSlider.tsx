@@ -1,35 +1,45 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Mail } from 'lucide-react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, Mail } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const slides = [
     {
         image: '/slider1.jpeg',
-        title: 'Welcome to Hotel Agrawal Pride',
-        desc: 'Marchikote Square, Puri, Odisha 752001',
+        title: 'Educating Youth',
+        desc: 'We provide learning opportunities that shape motivated individuals.',
     },
     {
         image: '/slider2.jpeg',
-        title: 'Exquisite Accommodations',
-        desc: 'In the Heart of Downtown',
+        title: 'Inspiring Actions',
+        desc: 'Motivated individuals are the catalysts for meaningful social change.',
     },
     {
         image: '/slider3.jpeg',
-        title: 'Experience Culinary Excellence',
-        desc: 'Indulge in dishes crafted by our chefs.',
+        title: 'Supporting Children',
+        desc: 'Every child deserves a chance to grow and thrive in society.',
     },
     {
         image: '/slider4.jpeg',
-        title: 'Relax and Unwind',
-        desc: 'Oasis in the City',
+        title: 'Spreading awareness',
+        desc: 'At SEWYCA we believe that aware people are key to social progress.',
     },
     {
         image: '/slider5.jpeg',
-        title: 'Your Occasions are our celebrations',
-        desc: 'Organize your events with us'
+        title: 'Empowering Women',
+        desc: 'Through skill development and support, we enable women to lead change.'
+    },
+    {
+        image: '/slider6.jpeg',
+        title: 'Promoting Health',
+        desc: 'Healthy communities are the foundation of a prosperous society.'
+    },
+    {
+        image: '/slider7.jpeg',
+        title: 'Building Communities',
+        desc: 'Our grassroots approach creates stronger, more resilient local networks.'
     }
 ];
 
@@ -51,7 +61,7 @@ const HeroSlider = () => {
     }
 
     return (
-        <div className="relative h-[85vh] w-full overflow-hidden font-['Inter']">
+        <div className="mt-4 relative h-[85vh] w-full overflow-hidden font-['Inter']">
             <AnimatePresence initial={false}>
                 <motion.div
                     key={currentSlide}

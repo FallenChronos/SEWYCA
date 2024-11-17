@@ -56,7 +56,7 @@ const AboutPage = () => {
     };
 
     const Content = () => (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
+        <div className="min-h-screen bg-gradient-to-br from-emerald-100 to-blue-200">
             {/* Hero Section with Parallax Effect */}
             <section className="relative h-[80vh] overflow-hidden">
                 <m.div
@@ -66,7 +66,7 @@ const AboutPage = () => {
                     transition={{ duration: 1 }}
                 >
                     <img
-                        src="/slider1.jpeg"
+                        src="/banner.jpeg"
                         alt="NGO Hero Image"
                         className="w-full h-full object-cover"
                     />
@@ -99,7 +99,7 @@ const AboutPage = () => {
                         <Card className="hover:shadow-lg transition-shadow">
                             <CardContent className="pt-6">
                                 <Users className="w-10 h-10 text-blue-600 mb-4" />
-                                <h3 className="text-xl font-semibold mb-3">Our Mission</h3>
+                                <h3 className="text-xl font-semibold mb-3">Our Aim</h3>
                                 <p className="text-gray-600">To empower marginalized communities through sustainable development initiatives and inclusive programs.</p>
                             </CardContent>
                         </Card>
@@ -175,8 +175,8 @@ const AboutPage = () => {
                     <div className="max-w-6xl mx-auto">
                         <div className="text-center mb-12">
                             <Badge className="mb-4">Our Work</Badge>
-                            <h2 className="text-4xl font-bold mb-4">Major Activities</h2>
-                            <p className="text-gray-600 max-w-2xl mx-auto">
+                            <h2 className="text-4xl text-gray-700 font-bold mb-4">Major Activities</h2>
+                            <p className="text-gray-800 max-w-2xl mx-auto">
                                 Our comprehensive approach addresses various aspects of community development through targeted programs and initiatives.
                             </p>
                         </div>

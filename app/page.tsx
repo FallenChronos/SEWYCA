@@ -37,7 +37,7 @@ const HomePage = () => {
       {/* Content Area */}
       <div className="relative z-10">
         {/* Vision & Mission Section */}
-        <section className="py-24 px-4 md:px-6">
+        <section className="py-24 px-4 md:px-5">
           <div className="container mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -111,7 +111,7 @@ const HomePage = () => {
               className="text-center mb-16"
             >
               <h2 className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-blue-600 mb-4 font-['Clash_Display']">
-                Our Impact
+                Some of Our Work
               </h2>
               <div className="w-32 h-1.5 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto rounded-full" />
             </motion.div>

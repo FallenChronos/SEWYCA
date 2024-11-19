@@ -241,7 +241,7 @@ const HomePage = () => {
           <AboutPage />
         </section>
 
-        <section>
+        <section id='contact'>
           <ContactForm />
         </section>
       </div>

@@ -91,14 +91,14 @@ const Navbar = () => {
                                 Home
                             </Link>
                             <Link
-                                href="/about"
+                                href="#about"
                                 className="block px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg font-medium transition-all duration-200"
                                 onClick={() => setIsOpen(false)}
                             >
                                 About
                             </Link>
                             <Link
-                                href="/contact"
+                                href="#contact"
                                 className="block px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg font-medium transition-all duration-200"
                                 onClick={() => setIsOpen(false)}
                             >

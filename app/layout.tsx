@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "SEWYCA",
-  description: "Society for Empowerment of Women Youth and Children for Action (SEWYCA)",
+  description: "SEWYCA is a non-profit charitable organization, our focus remains on assisting communities at grassroots levels to build better futures.",
 };
 
 export default function RootLayout({

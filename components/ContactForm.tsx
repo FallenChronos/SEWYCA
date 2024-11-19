@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from "@/components/ui/button";
@@ -10,18 +10,26 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
-const ContactForm = () => {
+interface FormData {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+}
+
+const ContactUs = () => {
     const { toast } = useToast();
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<FormData>({
         name: '',
         email: '',
         subject: '',
         message: ''
     });
 
-
-    const handleChange = (e: any) => {
+    const handleChange = (
+        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -29,7 +37,7 @@ const ContactForm = () => {
         }));
     };
 
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
 
@@ -50,7 +58,8 @@ const ContactForm = () => {
                 subject: '',
                 message: ''
             });
-        } catch (error) {
+        } catch {
+            // Removed the 'error' parameter since it wasn't being used
             toast({
                 title: "Error",
                 description: "Something went wrong. Please try again later.",
@@ -62,7 +71,7 @@ const ContactForm = () => {
     };
 
     return (
-        <section className="py-24 px-4 md:px-6">
+        <section className="py-24 px-4 md:px-6 bg-gradient-to-br from-slate-100 to-gray-200">
             <div className="container mx-auto max-w-7xl">
                 {/* Header */}
                 <motion.div
@@ -218,4 +227,4 @@ const ContactForm = () => {
     );
 };
 
-export default ContactForm;
+export default ContactUs;

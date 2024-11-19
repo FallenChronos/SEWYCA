@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import Image from 'next/image';
 
 interface FormData {
     name: string;
@@ -59,7 +60,6 @@ const ContactUs = () => {
                 message: ''
             });
         } catch {
-            // Removed the 'error' parameter since it wasn't being used
             toast({
                 title: "Error",
                 description: "Something went wrong. Please try again later.",
@@ -87,64 +87,67 @@ const ContactUs = () => {
                     <div className="w-32 h-1.5 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto rounded-full" />
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-8 items-start">
-                    {/* Contact Information */}
+                <div className="grid md:grid-cols-2 gap-8">
+                    {/* Left Column: Contact Info + Image */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
-                        className="space-y-6"
+                        className="flex flex-col h-full"
                     >
-                        <Card className="bg-white/80 backdrop-blur-xl border-white/20">
+                        <Card className="bg-white/80 backdrop-blur-xl border-white/20 flex-grow">
                             <CardHeader>
                                 <CardTitle className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
                                     Contact Information
                                 </CardTitle>
                                 <CardDescription>
-                                    Reach out to us through any of these channels
+                                    Every message sparks change. Connect with us to be part of the journey towards positive social impact.
                                 </CardDescription>
                             </CardHeader>
-                            <CardContent className="space-y-4">
+                            <CardContent className="space-y-8">
                                 <div className="flex items-center space-x-4">
-                                    <div className="p-3 rounded-full bg-emerald-100">
+                                    <div className="p-3 rounded-full bg-emerald-100 flex-shrink-0">
                                         <Mail className="w-5 h-5 text-emerald-600" />
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500">Email</p>
-                                        <p className="font-medium">contact@example.com</p>
+                                        <p className="font-medium">sewyca2000@gmail.com</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center space-x-4">
-                                    <div className="p-3 rounded-full bg-blue-100">
+                                    <div className="p-3 rounded-full bg-blue-100 flex-shrink-0">
                                         <Phone className="w-5 h-5 text-blue-600" />
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500">Phone</p>
-                                        <p className="font-medium">+1 (555) 123-4567</p>
+                                        <p className="font-medium">+91 895 924 3939</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center space-x-4">
-                                    <div className="p-3 rounded-full bg-indigo-100">
+                                    <div className="p-3 rounded-full bg-indigo-100 flex-shrink-0">
                                         <MapPin className="w-5 h-5 text-indigo-600" />
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500">Address</p>
-                                        <p className="font-medium">123 Example Street, City, Country</p>
+                                        <p className="font-medium">Society for Empowerment of Women Youth and Children for Action (SEWYCA),
+                                            Mariampur High School,
+                                            117/ M/ 2, Double Pulia, Kakadev, Rawatpur P.O, Kanpur Nagar,  Uttar Pradesh- 208019</p>
                                     </div>
                                 </div>
                             </CardContent>
                         </Card>
                     </motion.div>
 
-                    {/* Contact Form */}
+                    {/* Right Column: Contact Form */}
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
+                        className="h-full"
                     >
-                        <Card className="bg-white/80 backdrop-blur-xl border-white/20">
+                        <Card className="bg-white/80 backdrop-blur-xl border-white/20 h-full">
                             <CardHeader>
                                 <CardTitle className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
                                     Send us a Message
@@ -175,18 +178,6 @@ const ContactUs = () => {
                                             type="email"
                                             placeholder="your@email.com"
                                             value={formData.email}
-                                            onChange={handleChange}
-                                            required
-                                            className="bg-white/50"
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <Label htmlFor="subject">Subject</Label>
-                                        <Input
-                                            id="subject"
-                                            name="subject"
-                                            placeholder="What's this about?"
-                                            value={formData.subject}
                                             onChange={handleChange}
                                             required
                                             className="bg-white/50"

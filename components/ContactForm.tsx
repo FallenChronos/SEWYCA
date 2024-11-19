@@ -1,15 +1,14 @@
 'use client';
 
-import { useState, ChangeEvent, FormEvent } from 'react';
-import { motion } from 'framer-motion';
-import { useToast } from '@/hooks/use-toast';
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import Image from 'next/image';
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from '@/hooks/use-toast';
+import { motion } from 'framer-motion';
+import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 
 interface FormData {
     name: string;

@@ -134,11 +134,11 @@ const AboutPage = () => {
                                 <Badge className="mb-6">About Us</Badge>
                                 <h2 className="text-4xl font-bold mb-6">Building Better Communities</h2>
                                 <p className="text-gray-600 leading-relaxed mb-8">
-                                    SEWYCA is a non-profit charitable organization registered under the Society's Registration Act 1860, initiated by the Congregation of Ursulines of Mary Immaculate (UMI). Our focus remains on assisting communities at grassroots levels to build better futures.
+                                    SEWYCA is a non-profit charitable organization registered under the Society&apos;s Registration Act 1860, initiated by the Congregation of Ursulines of Mary Immaculate (UMI). Our focus remains on assisting communities at grassroots levels to build better futures.
                                 </p>
                                 <div className="bg-blue-50 p-6 rounded-lg border border-blue-100">
                                     <p className="text-gray-700 italic">
-                                        "In order to reach the most needy, we have set our target group as the marginalized and oppressed in society."
+                                        &ldquo;In order to reach the most needy, we have set our target group as the marginalized and oppressed in society.&rdquo;
                                     </p>
                                 </div>
                             </div>

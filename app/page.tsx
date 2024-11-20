@@ -133,7 +133,7 @@ const HomePage = () => {
                       transition={{ duration: 0.3 }}
                     />
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      We envision a society built on the pillars of equality, justice, and brotherhood, where every individual thrives and reaches their fullest potential, regardless of their caste, creed, or gender.
+                      We envisage a society where all experience fraternity liberty equality and justice irrespective of cast, greed and gender.
                     </p>
                   </div>
                 </div>
@@ -160,7 +160,7 @@ const HomePage = () => {
                       transition={{ duration: 0.3 }}
                     />
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      Our mission is to transform the lives of marginalized communities, especially Dalits, tribals, and backward classes. Through education, community organizing, and sustained support, we empower women, youth, and children to build a future of dignity.
+                      To empower the powerless and voiceless especially dalits, tribals and backward classes with more emphasis on women, youth and children by educating,  conscentising, organizing and supporting them in their struggles.
                     </p>
                   </div>
                 </div>
@@ -222,8 +222,8 @@ const HomePage = () => {
                   <Image
                     src={item.image}
                     alt={item.title}
-                    height={100}
-                    width={100}
+                    width={300}
+                    height={300}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

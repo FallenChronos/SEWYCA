@@ -7,13 +7,13 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from '@/hooks/use-toast';
 import { motion } from 'framer-motion';
+import emailjs from "@emailjs/browser";
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { ChangeEvent, FormEvent, useState } from 'react';
 
 interface FormData {
     name: string;
     email: string;
-    subject: string;
     message: string;
 }
 
@@ -23,7 +23,6 @@ const ContactUs = () => {
     const [formData, setFormData] = useState<FormData>({
         name: '',
         email: '',
-        subject: '',
         message: ''
     });
 
@@ -42,20 +41,27 @@ const ContactUs = () => {
         setIsSubmitting(true);
 
         try {
-            // Your submission logic here
-
+            await emailjs
+                .send(
+                    'service_96skg1k',
+                    'template_5n5vw8o',
+                    {
+                        from_name: formData.name,
+                        from_email: formData.email,
+                        message: formData.message,
+                    },
+                    'EGn6g26sOme6AMy9w'
+                )
             toast({
                 title: "Success!",
                 description: "Your message has been sent successfully. We'll get back to you soon!",
                 variant: "default",
                 className: "bg-emerald-500 text-white border-none",
             });
-
             // Reset form
             setFormData({
                 name: '',
                 email: '',
-                subject: '',
                 message: ''
             });
         } catch {

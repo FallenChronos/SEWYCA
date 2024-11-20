@@ -29,15 +29,19 @@ const Navbar = () => {
                             />
                         </div>
                         <div className="hidden md:block">
-                            <h1 className="text-xl lg:text-2xl text-slate-800 font-semibold leading-tight tracking-tight">
-                                Society for Empowerment of <br className="hidden lg:block" />
-                                <span className="text-blue-800">Women Youth and Children</span> for Action
-                            </h1>
+                            <Link href="/">
+                                <h1 className="text-xl lg:text-2xl text-slate-800 font-semibold leading-tight tracking-tight">
+                                    Society for Empowerment of <br className="hidden lg:block" />
+                                    <span className="text-blue-800">Women Youth and Children</span> for Action
+                                </h1>
+                            </Link>
                         </div>
                         <div className="block md:hidden">
-                            <h1 className="text-2xl text-slate-800 font-extrabold leading-tight tracking-tight">
-                                SEWYCA
-                            </h1>
+                            <Link href="/">
+                                <h1 className="text-2xl text-slate-800 font-extrabold leading-tight tracking-tight">
+                                    SEWYCA
+                                </h1>
+                            </Link>
                         </div>
                     </div>
 

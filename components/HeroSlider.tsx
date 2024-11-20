@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { Button } from './ui/button';
+import Link from 'next/link';
 
 const slides = [
     {
@@ -51,7 +53,7 @@ const HeroSlider = () => {
         setIsMounted(true);
         const timer = setInterval(() => {
             setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-        }, 5000);
+        }, 7000);
 
         return () => clearInterval(timer);
     }, []);
@@ -75,7 +77,6 @@ const HeroSlider = () => {
                         src={slides[currentSlide].image}
                         alt={slides[currentSlide].title}
                         fill={true}
-                        style={{ objectFit: 'fill' }}
                         quality={100}
                         priority
                     />
@@ -103,13 +104,15 @@ const HeroSlider = () => {
                                 transition={{ delay: 0.8 }}
                                 className="flex items-center justify-center gap-4 flex-wrap"
                             >
-                                <a
-                                    href="mailto:contact@example.com"
-                                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+                                <Button
+                                    asChild
+                                    className="inline-flex z-50 items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
                                 >
-                                    <Mail className="w-5 h-5" />
-                                    <span>Contact Us</span>
-                                </a>
+                                    <Link href={"#contact"}>
+                                        <Mail className="w-5 h-5" />
+                                        <span>Contact Us</span>
+                                    </Link>
+                                </Button>
                             </motion.div>
                         </div>
                     </div>

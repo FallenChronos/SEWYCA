@@ -81,7 +81,7 @@ const AboutPage = () => {
                 >
                     <Badge className="mb-6 w-fit bg-blue-500 hover:bg-blue-600">Established 1990</Badge>
                     <h1 className="text-4xl md:text-7xl font-bold mb-6 text-white max-w-4xl leading-tight">
-                        Society for Empowerment of Women Youth and Children
+                        Society for Empowerment of Women Youth and Children for Action
                     </h1>
                     <p className="text-xl md:text-2xl text-blue-100 max-w-2xl">
                         Empowering communities, transforming lives through sustainable development and inclusive growth.
@@ -114,7 +114,7 @@ const AboutPage = () => {
                             <CardContent className="pt-6">
                                 <History className="w-10 h-10 text-blue-600 mb-4" />
                                 <h3 className="text-xl font-semibold mb-3">Our Journey</h3>
-                                <p className="text-gray-600">From a single school in 1990 to a comprehensive community development organization.</p>
+                                <p className="text-gray-600">From a single slum in 1990 to a comprehensive community development organization.</p>
                             </CardContent>
                         </Card>
                     </div>

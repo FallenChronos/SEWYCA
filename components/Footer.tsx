@@ -56,13 +56,19 @@ const Footer = () => {
                                 Home
                             </Link>
                             <Link
-                                href="/about"
+                                href="/#about"
                                 className="block text-slate-300 hover:text-blue-400 transition-colors"
                             >
                                 About
                             </Link>
                             <Link
-                                href="/contact"
+                                href="/gallery"
+                                className="block text-slate-300 hover:text-blue-400 transition-colors"
+                            >
+                                Gallery
+                            </Link>
+                            <Link
+                                href="/#contact"
                                 className="block text-slate-300 hover:text-blue-400 transition-colors"
                             >
                                 Contact

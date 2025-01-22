@@ -10,10 +10,26 @@ import React, { useEffect, useState } from 'react';
 const HomePage = () => {
   const [isMounted, setIsMounted] = useState(false);
 
+  // Once mounted, we can safely check window.location
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
+  // After the component has mounted, check if there's a hash (e.g. #about, #contact)
+  // and scroll to that element.
+  useEffect(() => {
+    if (!isMounted) return; // Only run if we've mounted on client
+
+    const hash = window.location.hash; // e.g. '#about' or '#contact'
+    if (hash) {
+      const element = document.querySelector(hash) as HTMLElement | null;
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [isMounted]);
+
+  // (Optional) Early return to avoid flicker before mounted
   if (!isMounted) {
     return <main className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100" />;
   }
@@ -31,7 +47,7 @@ const HomePage = () => {
           transition={{
             duration: 20,
             repeat: Infinity,
-            repeatType: "reverse",
+            repeatType: 'reverse',
           }}
           className="absolute inset-0 bg-[linear-gradient(120deg,#84fab0_0%,#8fd3f4_100%)] opacity-[0.07]"
           style={{
@@ -46,7 +62,7 @@ const HomePage = () => {
           transition={{
             duration: 150,
             repeat: Infinity,
-            ease: "linear",
+            ease: 'linear',
           }}
           className="absolute inset-0 opacity-[0.03]"
         >
@@ -78,8 +94,8 @@ const HomePage = () => {
               transition={{
                 duration: Math.random() * 10 + 20,
                 repeat: Infinity,
-                repeatType: "reverse",
-                ease: "linear",
+                repeatType: 'reverse',
+                ease: 'linear',
               }}
             />
           ))}
@@ -94,8 +110,8 @@ const HomePage = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              viewport={{ once: true, margin: '-100px' }}
               className="text-center mb-16"
             >
               <h2 className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-blue-600 mb-4 font-['Clash_Display'] hover:scale-105 transition-transform duration-300">
@@ -104,7 +120,7 @@ const HomePage = () => {
               <motion.div
                 className="w-32 h-1.5 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto rounded-full"
                 whileInView={{
-                  width: ["0%", "8rem"],
+                  width: ['0%', '8rem'],
                 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
@@ -112,7 +128,7 @@ const HomePage = () => {
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-              {/* Vision Card with enhanced hover effects */}
+              {/* Vision Card */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -129,17 +145,19 @@ const HomePage = () => {
                     </h3>
                     <motion.div
                       className="w-20 h-1.5 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mb-6"
-                      whileHover={{ width: "100%" }}
+                      whileHover={{ width: '100%' }}
                       transition={{ duration: 0.3 }}
                     />
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      We envisage a society where all experience fraternity liberty equality and justice irrespective of cast, greed and gender.
+                      We envisage a society where all experience fraternity
+                      liberty equality and justice irrespective of caste,
+                      creed, and gender.
                     </p>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Mission Card with enhanced hover effects */}
+              {/* Mission Card */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -156,11 +174,14 @@ const HomePage = () => {
                     </h3>
                     <motion.div
                       className="w-20 h-1.5 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mb-6"
-                      whileHover={{ width: "100%" }}
+                      whileHover={{ width: '100%' }}
                       transition={{ duration: 0.3 }}
                     />
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      To empower the powerless and voiceless especially dalits, tribals and backward classes with more emphasis on women, youth and children by educating,  conscentising, organizing and supporting them in their struggles.
+                      To empower the powerless and voiceless—especially dalits,
+                      tribals, and backward classes with more emphasis on women,
+                      youth, and children by educating, conscientising, organizing,
+                      and supporting them in their struggles.
                     </p>
                   </div>
                 </div>
@@ -169,13 +190,12 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Rest of the content remains the same but with enhanced Image hover effects */}
         <section className="py-24 px-4 md:px-6">
           <div className="container mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
               viewport={{ once: true }}
               className="text-center mb-16"
             >
@@ -185,7 +205,7 @@ const HomePage = () => {
               <motion.div
                 className="w-32 h-1.5 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto rounded-full"
                 whileInView={{
-                  width: ["0%", "8rem"],
+                  width: ['0%', '8rem'],
                 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
@@ -195,20 +215,23 @@ const HomePage = () => {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Health Camps",
-                  description: "We conduct regular health camps in remote and underprivileged areas.",
-                  image: "/work1.jpeg"
+                  title: 'Health Camps',
+                  description:
+                    'We conduct regular health camps in remote and underprivileged areas.',
+                  image: '/work1.jpeg',
                 },
                 {
-                  title: "Awareness Campaigns",
-                  description: "Spreading awareness on social issues among the masses through meetups and events.",
-                  image: "/work2.jpeg"
+                  title: 'Awareness Campaigns',
+                  description:
+                    'Spreading awareness on social issues among the masses through meetups and events.',
+                  image: '/work2.jpeg',
                 },
                 {
-                  title: "Women Empowerment",
-                  description: "Conducting regular workshops and training sessions focusing on empowering women.",
-                  image: "/work3.jpeg"
-                }
+                  title: 'Women Empowerment',
+                  description:
+                    'Conducting regular workshops and training sessions focusing on empowering women.',
+                  image: '/work3.jpeg',
+                },
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -228,7 +251,9 @@ const HomePage = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-2xl font-bold mb-3 font-['Clash_Display']">{item.title}</h3>
+                    <h3 className="text-2xl font-bold mb-3 font-['Clash_Display']">
+                      {item.title}
+                    </h3>
                     <p className="text-base text-gray-100">{item.description}</p>
                   </div>
                 </motion.div>
@@ -236,12 +261,11 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-
-        <section id='about'>
+        <section id="about">
           <AboutPage />
         </section>
 
-        <section id='contact'>
+        <section id="contact">
           <ContactForm />
         </section>
       </div>

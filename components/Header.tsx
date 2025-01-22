@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
@@ -28,14 +28,19 @@ const Navbar = () => {
                                 priority
                             />
                         </div>
+                        {/* Larger screen logo text */}
                         <div className="hidden md:block">
                             <Link href="/">
                                 <h1 className="text-xl lg:text-2xl text-slate-800 font-semibold leading-tight tracking-tight">
                                     Society for Empowerment of <br className="hidden lg:block" />
-                                    <span className="text-blue-800">Women Youth and Children</span> for Action
+                                    <span className="text-blue-800">
+                                        Women Youth and Children
+                                    </span>{' '}
+                                    for Action
                                 </h1>
                             </Link>
                         </div>
+                        {/* Smaller screen abbreviated logo text */}
                         <div className="block md:hidden">
                             <Link href="/">
                                 <h1 className="text-2xl text-slate-800 font-extrabold leading-tight tracking-tight">
@@ -53,14 +58,28 @@ const Navbar = () => {
                         >
                             Home
                         </Link>
+                        {/* 
+              Changed from `href="#about"` to `href="/#about"` 
+              so it navigates back to the home page’s “About” section 
+            */}
                         <Link
-                            href="#about"
+                            href="/#about"
                             className="text-slate-600 hover:text-blue-700 font-semibold transition-all duration-200 px-4 py-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
                         >
                             About
                         </Link>
                         <Link
-                            href="#contact"
+                            href="/gallery"
+                            className="text-slate-600 hover:text-blue-700 font-semibold transition-all duration-200 px-4 py-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
+                        >
+                            Gallery
+                        </Link>
+                        {/* 
+              Changed from `href="#contact"` to `href="/#contact"` 
+              so it navigates back to the home page’s “Contact” section 
+            */}
+                        <Link
+                            href="/#contact"
                             className="text-slate-600 hover:text-blue-700 font-semibold transition-all duration-200 px-4 py-2 rounded-lg hover:bg-blue-50 active:bg-blue-100"
                         >
                             Contact
@@ -94,15 +113,25 @@ const Navbar = () => {
                             >
                                 Home
                             </Link>
+                            {/* Same idea: changed to /#about */}
                             <Link
-                                href="#about"
+                                href="/#about"
                                 className="block px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg font-medium transition-all duration-200"
                                 onClick={() => setIsOpen(false)}
                             >
                                 About
                             </Link>
+                            {/* Add missing Gallery link */}
                             <Link
-                                href="#contact"
+                                href="/gallery"
+                                className="block px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg font-medium transition-all duration-200"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Gallery
+                            </Link>
+                            {/* Same idea: changed to /#contact */}
+                            <Link
+                                href="/#contact"
                                 className="block px-4 py-3 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-lg font-medium transition-all duration-200"
                                 onClick={() => setIsOpen(false)}
                             >

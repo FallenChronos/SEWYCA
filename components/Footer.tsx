@@ -46,7 +46,7 @@ const Footer = () => {
                     </div>
 
                     {/* Quick Links - Hidden on mobile */}
-                    <div className="hidden md:block lg:mx-auto">
+                    <div className="hidden md:block lg:mx-auto z-10">
                         <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
                         <nav className="space-y-3">
                             <Link
